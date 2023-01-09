@@ -1,0 +1,16 @@
+//CONTROLLER
+
+        $this->form_validation->set_rules('kode_class', 'Kode Class', 'required');
+        $this->form_validation->set_message('required', '{field}  masih kosong, silakan di isi dulu');
+        $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
+        if ($this->form_validation->run() == FALSE) {  
+        }
+        
+        
+        //VIEWS
+        
+         <div class="col <?= form_error('kode_class') ? '' : null ?>">
+            <label for="kode_class"><span class="badge badge-secondary">kode class</span> </label>
+            <input type="text" class="form-control" value="<?= set_value("nama_merk") ?>" name="kode_class" id="kode_class" placeholder="kode class...">
+            <small class="text-danger" style="font-style: italic "><span class="badge badge-danger"><?= form_error('kode_class') ?></span></small>
+          </div>
